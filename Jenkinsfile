@@ -2,25 +2,29 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/meghanadhmangina-dotcom/jenkinssample.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                // Example build step (replace with your build tool)
                 echo 'Building the project...'
             }
         }
 
         stage('Test') {
             steps {
-                // Example test step
                 echo 'Running tests...'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Example deploy step
                 echo 'Deploying application...'
             }
         }
     }
-}z
+}
